@@ -16,47 +16,6 @@ header {
     background-color: #ececec;
 }
 
-/*-----витя--------*/
-/* Стилі для карты */
-img {
-    max-width: 200%;
-    height: auto;
-}
-.map {
-    position: relative;
-    width: 100%; /* Ширина карты */
-    max-width: 100%; /* Максимальная ширина карты */
-    height: auto; /* Автоматическая высота, чтобы сохранить соотношение сторон */
-}
-
-/* Необязательные стили для картинки внутри карты */
-#image-container img {
-    max-width: 100%; /* Ширина изображения равна ширине контейнера */
-    height: auto; /* Автоматическая высота, чтобы сохранить соотношение сторон */
-    display: block; /* Элемент блочный */
-    margin: 0 auto; /* Автоматический отступ по горизонтали, чтобы изображение оставалось по центру */
-}
-
-.marker {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: blue;
-    border-radius: 50%;
-    cursor: pointer; 
-  
-}
-
-
-.marker:hover {
-    transform: scale(1.2); 
-    z-index: 2; 
-}
-
-
-
-
-
 /*-------link-----------*/
 .link {
     position: relative;
@@ -185,14 +144,6 @@ main {
     height: 70%; 
     margin-top: 15px;
 }
-/*
-.enlarged-image {
-    width: 100%; 
-    height: auto; 
-    max-width: 800px; 
-}
-*/
-
 
 #location-description {
     margin-left: 50px;
@@ -209,7 +160,7 @@ footer {
     text-align: center;
     border-radius: 5px;
 }
-/*-----------кнопки--------*/
+/*-----------button--------*/
 
 button {
     background-color: #004499;
@@ -234,6 +185,158 @@ img {
 
 /*---------карта ------------*/
 
+.toggle-map {
+    display: none;
+}
+
+.dropmap {
+    background-color: #004499;
+    color: white;
+    padding: 11px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 13px;
+
+}
+ 
+
+.dropmap:hover, .dropmap:focus {
+    background-color: #004499;
+}
+
+/* Стили для карты */
+
+.map-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 170px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 57%;
+    transform: translateX(-10%);
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#toggleMap:checked ~ .map-content {
+    display: block;
+    opacity: 1;
+}
+
+.map-content:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 10px);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #f1f1f1;
+}
+
+.map-content:after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: calc(50% - 8px);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+}
+
+/*--------марке-------*/
+
+.marker {
+    position: absolute;
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%;
+    background-color: #004499; 
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: transform 0.9s ease; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.marker:hover {
+    transform: scale(1.2);
+    width: 40px; 
+    height: 40px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.marker:hover .location-name {
+    display: block;
+}
+
+.location-name {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 5px);
+    width: 100px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.marker.marker1 {
+    background-image: url('jpg/вхідхду.jpg');
+    left: 60%;
+    top: 52%; 
+  }
+  
+  .marker.marker2 {
+    background-image: url('jpg/парк2.jpg'); 
+    left: 54%;
+    top: 52%;
+  }
+  .marker.marker3{
+    background-image:url('jpg/ліцей.jpg') ;
+    left: 75%; 
+    top: 70%;
+  }
+  .marker.marker4 {
+    background-image: url('jpg/басейнвхід.jpg');
+    left: 60%;
+    top: 77%; 
+  }
+  .marker.marker5 {
+    background-image: url('jpg/футбол.jpg');
+    left: 53%;
+    top: 77%; 
+  }
+
+  .marker.marker6 {
+    background-image: url('jpg/меморіал.jpg');
+    left: 56%;
+    top: 63%; 
+  }
+  .marker.marker7 {
+    background-image: url('jpg/афіна.jpg');
+    left: 58%;
+    top: 56%; 
+  }
+  
 
    /*--------адаптация---------*/
    @media only screen and (max-width: 1020px) {
