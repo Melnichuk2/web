@@ -140,6 +140,7 @@ function speakDescription(location) {
     var description = document.getElementById('location-description').innerText;
     speaking = true;
     var speech = new SpeechSynthesisUtterance(description);
+    speech.lang = 'uk-UA'; 
     window.speechSynthesis.speak(speech);
     speech.onend = function(event) {
         speaking = false;
