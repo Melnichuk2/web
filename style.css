@@ -160,7 +160,7 @@ footer {
     text-align: center;
     border-radius: 5px;
 }
-/*-----------button--------*/
+/*-----------кнопки в целом--------*/
 
 button {
     background-color: #004499;
@@ -183,7 +183,7 @@ img {
     border-radius: 5px;
 }
 
-/*---------карта ------------*/
+/*--------- кнопка карты ------------*/
 
 .toggle-map {
     display: none;
@@ -208,7 +208,7 @@ img {
     background-color: #004499;
 }
 
-/* Стили для карты */
+/*-------------- карты ------------*/
 
 .map-content {
     display: none;
@@ -217,12 +217,12 @@ img {
     min-width: 170px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    left: 57%;
-    transform: translateX(-10%);
+    left: 50%;
+    transform: translateX(-50%);
     padding: 20px;
     border-radius: 10px;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 1.5s ease;
 }
 
 #toggleMap:checked ~ .map-content {
@@ -230,31 +230,21 @@ img {
     opacity: 1;
 }
 
-.map-content:before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: calc(50% - 10px);
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #f1f1f1;
-}
-
+.map-content:before,
 .map-content:after {
-    content: "";
-    position: absolute;
-    top: -8px;
-    left: calc(50% - 8px);
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid #fff;
+    display: none; 
 }
 
-/*--------марке-------*/
+.map {
+    max-width: 100%;
+}
+
+#image-container {
+    position: relative; 
+    max-width: 100%; 
+}
+
+/*--------маркер-------*/
 
 .marker {
     position: absolute;
@@ -264,7 +254,7 @@ img {
     background-color: #004499; 
     border: 2px solid #fff;
     cursor: pointer;
-    transition: transform 0.9s ease; 
+    transition: transform 1.0s ease; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -331,11 +321,6 @@ img {
     left: 56%;
     top: 63%; 
   }
-  .marker.marker7 {
-    background-image: url('jpg/афіна.jpg');
-    left: 58%;
-    top: 56%; 
-  }
   
 
    /*--------адаптация---------*/
@@ -361,9 +346,10 @@ img {
  @media only screen and (max-width: 725px) {
 
     .map-content {
-   left: 40%;  
-}
+        left: 50%; 
+     }
 
+    /*---*/
     .dropmap,
     .toggle-map,
     button {
