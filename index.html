@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/map-solid.svg" type="image/x-icon">
+    <title>Віртуальна екскурсія по Херсонському Державному Університету</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <h1>Віртуальна екскурсія по Університету</h1>
+    <button onclick="goToHome()">Головна</button>
+    <button onclick="autoShowLocations()">Екскурсія</button>
+    <div class="link">
+        <button class="link-soc">Соціальні мережі</button>
+  </div>
+  </header>
+
+  
+  <div class="grid-container">
+    <div class="grid-item">
+        <img src="jpg/карта111.jpg" alt="карта унів">
+        <div class="marker marker1" onclick="showLocation('Вхід до Херсонського Деражвного Університету')">
+            <span class="location-name">Вхід до ХДУ</span>
+        </div>
+        <div class="marker marker2" onclick="showLocation('Парк')">
+            <span class="location-name">Парк</span>
+        </div>
+        <div class="marker marker3" onclick="showLocation('Вхід до ліцею')" >
+            <span class="location-name">Вхід до ліцею</span>
+        </div>
+        <div class="marker marker4" onclick="showLocation('Басейн')">
+            <span class="location-name">Басейн</span>
+        </div>
+        <div class="marker marker5" onclick="showLocation('Стадіон')">
+            <span class="location-name">Стадіон</span>
+        </div>
+        <div class="marker marker6" onclick="showLocation('Пам`ятний меморіал')">
+            <span class="location-name">Пам'ятний меморіал</span>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="jpg/комплекс5.jpg" alt="5 корпус">
+        <div class="marker"></div>
+    </div>
+    <div class="grid-item">
+        <img src="jpg/ботсад.jpg" alt="бот.сад">
+        <div class="marker"></div>
+    </div>
+    <div class="grid-item">
+        <img src="jpg/бурев.jpg" alt="Буревісник">
+        <div class="marker"></div>
+    </div>
+    <div class="grid-item">
+        <img src="jpg/водстанц.jpg" alt="Водяна станція">
+        <div class="marker"></div>
+    </div>
+</div>
+
+<main>
+    <div id="location-info">
+      <img id="location-image" src="jpg/хду.jpg" alt="Херсонський Державний Університет">
+      <p id="location-description"> Ласкаво просимо, вас вітає сайт для екскурсії по Херсонському Державному Університету. Одному з найкращих університетів півдня. Університет, який витримав російську окупацію, та досі тримається попри всі обстріли російської армії. Сподіваємось, що наш чудовий університет витримає до кінця війни, і ми всі повернемося, і зможемо знову вчитися в цьому чудовому університеті.</p>
+    </div>
+  </main>
+ 
+
+  <script src="script.js"></script>
+
+</html>
