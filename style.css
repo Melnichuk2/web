@@ -18,7 +18,7 @@ button {
     background-color: #004499;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 13px 20px;
     margin: 0 10px;
     cursor: pointer;
     border-radius: 5px;
@@ -78,11 +78,11 @@ img {
     border-radius: 5px;
 }
 
-/*--------------*/
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: (2, 3fr); 
     gap: 10px;
     padding: 10px;
 }
@@ -99,7 +99,9 @@ img {
     display: block;
 }
 
-
+.grid-item:nth-child(1) {
+    grid-column: span 2;
+}
 
 /*----------------навигация----------*/
 .nav {
@@ -109,12 +111,12 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-    height: 60%;
-    width: 250px;
+    height:80%;
+    width: 240px;
     overflow-y: auto;
     padding-top: 40px;
     margin-top: 181px;
-    z-index: 1000;/* забезпечує, що меню буде поверх інших елементів */
+    z-index: 1000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }    
 
@@ -124,10 +126,10 @@ img {
 .dropbtn {
     background-color: #004499;
     color: white;
-    padding: 16px;
+    padding: 14px;
     font-size: 13px;
     border: none;
-    width: 179px; 
+    width: 170px; 
     height: 50px;     
 }
 
@@ -179,21 +181,31 @@ img {
     opacity: 1; 
     top: 0;
     right: 0%; 
-    width: 60%;
+    width: 78%;
     background-color: #eaeaf1;;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: right 0.3s ease;
-    display: none; 
     margin-top: 181px;
+    display: none;
   }
+#location-content {
+    display: flex;
+}
 
 #location-image {
-    width: 100%; 
+    width: 56%; 
     height: 80%; 
     margin-top: 15px;
+    display: flex;
 }
-  
+
+#location-description { 
+    margin-left: 23px;
+    font-size: 1.25vw; 
+    line-height: 1.5;
+}
+
   .hidden {
     display: none;
   }
@@ -217,8 +229,8 @@ img {
 
 .marker:hover {
     transform: scale(1.2);
-    width: 40px; 
-    height: 40px; 
+    width: 50px; 
+    height: 50px; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -290,6 +302,26 @@ img {
     left: 56%;
     top: 63%; 
   }
+  .marker.marker7{
+    background-image: url('jpg/комплекс.jpg');
+    left: 53%;
+    top: 38%; 
+  }
+  .marker.marker8{
+    background-image: url('jpg/ботаніческий.jpg');
+    left: 56%;
+    top: 63%; 
+  }
+  .marker.marker9{
+    background-image: url('jpg/буревісник.jpg');
+    left: 56%;
+    top: 63%; 
+  }
+  .marker.marker10{
+    background-image: url('jpg/водна станція.jpg');
+    left: 51%;
+    top: 33%; 
+  }
 
   /*-----footer----*/
   footer {
@@ -299,3 +331,48 @@ img {
     text-align: center;
     border-radius: 5px;
 }
+
+/*---Закрытия окна 0 и навигации----*/
+.nav {
+    transition: transform 0.3s ease;
+}
+
+#location-info {
+    transition: opacity 0.3s ease;
+}
+
+/*-----адаптация------*/
+
+@media screen and (max-width: 1400px) {
+    .nav {
+        height: 80%;
+        width: 200px;
+    }    
+    }
+    
+    @media screen and (max-width: 1200px) {
+        .nav {
+        height: 60%;
+        width: 170px;
+    }
+    .dropbtn {
+        font-size: 12px;
+        border: none;
+        width: 177px; 
+        height: 48px;
+        width: 150px; 
+        height: 60px; 
+    }
+    }
+    @media screen and (max-width: 1000px) {
+    
+    }
+    @media screen and (max-width: 800px) {
+    
+    }
+    @media screen and (max-width: 600px) {
+    
+    }
+    @media screen and (max-width: 400px) {
+        
+    }

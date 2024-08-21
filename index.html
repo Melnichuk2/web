@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 </head>
 <header>
     <h1>Віртуальна екскурсія по Університету</h1>
-    <button onclick="goToHome()">Головна</button>
+    <button id ='buttonMap'>Головна</button>
     <button onclick="autoShowLocations()">Екскурсія</button>
     <div class="link">
         <button class="link-soc">Соціальні мережі</button>
@@ -46,34 +46,40 @@
     </div>
     <div class="grid-item">
         <img src="jpg/5корпус.jpg" alt="5 корпус">
-       
+        <div class="marker marker7" onclick="showLocation('Навчально-лабораторний комплексу ХДУ №5')">
+          <span class="location-name">НЛК ХДУ №5</span>
+        </div>
     </div>
     <div class="grid-item">
         <img src="jpg/ботсад.jpg" alt="бот.сад">
+        <div class="marker marker8" onclick="showLocation('Ботаніческий сад ХДУ')">
+          <span class="location-name">Ботаніческий сад ХДУ</span>
+        </div>
         
     </div>
     <div class="grid-item">
         <img src="jpg/бурев.jpg" alt="Буревісник">
+        <div class="marker marker9" onclick="showLocation('СОТ Буревісник')">
+          <span class="location-name">Буревісник</span>
+        </div>
         
     </div>
     <div class="grid-item">
         <img src="jpg/водстанц.jpg" alt="Водяна станція">
+        <div class="marker marker10" onclick="showLocation('Водна станція')">
+          <span class="location-name">НЛК ХДУ №5</span>
+        </div>
        
     </div>
 </div>
-
-
-
 
 <nav class="nav" id="nav-menu">
     <div class="dropdown">
         <button class="dropbtn">Університет</button>
         <div class="dropdown-content">
           <a onclick="showLocation('Вхід до Херсонського Деражвного Університету')">Вхід до Херсонського Деражвного Університету</a>
-          <a onclick="showLocation('Центральна площа')">Центральна площа</a>
           <a onclick="showLocation('Приймальна комісія')">Приймальна комісія</a>
           <a onclick="showLocation('Головна зала')">Хол</a>
-          <a onclick="showLocation('Роздягальня')">Розлягальня</a>
           <a onclick="showLocation('Бібліотека')">Бібліотека</a>
           <a onclick="showLocation('Перший поверх')">Перший поверх</a>
           <a onclick="showLocation('Другий поверх')">Другий поверх</a>
@@ -116,18 +122,47 @@
           <a onclick="showLocation('Роздягальня басейн')">Роздягальня</a>
         </div>
       </div> 
+      <div class="dropdown">
+        <button class="dropbtn">НЛК ХДУ №5</button>
+        <div class="dropdown-content">
+          <a onclick="showLocation('Навчально-лабораторний комплексу ХДУ №5')">НЛК ХДУ №5</a>
+          <a onclick="showLocation('1 поверх')">Перший поверх</a>
+          <a onclick="showLocation('2 поверх')">Другий поверх</a>
+          <a onclick="showLocation('3 поверх')">Третій поверх</a>
+          <a onclick="showLocation('4 поверх')">Четвертий поверх</a>
+          <a onclick="showLocation('5 поверх')">П'ятий поверх</a>
+      </div> 
+      </div>
+      
+      <div class="dropdown">
+        <button class="dropbtn">Ботаніческий сад ХДУ</button>
+        <div class="dropdown-content">
+          <a onclick="showLocation('Ботаніческий сад ХДУ')">Ботаніческий сад</a>
+      </div> 
+      </div>
+      
+      <div class="dropdown">
+        <button class="dropbtn">СОТ "Буревісник"</button>
+        <div class="dropdown-content">
+          <a onclick="showLocation('СОТ Буревісник')">Буревісник</a>
+      </div> 
+      </div>
+      
+      <div class="dropdown">
+        <button class="dropbtn">Водна станція</button>
+        <div class="dropdown-content">
+          <a onclick="showLocation('Водна станція')">Водна станція</a>
+      </div> 
+      </div>
 </nav> 
 
-<main>
-    <div id="location-info">
-      <img id="location-image" src="jpg/хду.jpg" alt="Херсонський Державний Університет">
-      <p id="location-description"> </p>
+<div id = location-info>
+    <div id="location-content">
+      <img id="location-image">
+      <p id="location-description"></p>
     </div>
-  </main>
- 
-
+  </div>
 <footer>
 </footer>
-
   <script src="script.js"></script>
 </html>
