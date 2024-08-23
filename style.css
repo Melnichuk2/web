@@ -434,7 +434,9 @@ footer {
     #location-info{
         margin-top: 261px;
     }   
-     
+    .grid-container {
+        display: block;
+} 
 }    
             
 @media screen and (max-width: 500px) {  

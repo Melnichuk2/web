@@ -1,5 +1,5 @@
 
-/*--------вчключение карты-----------*/
+/*--------включение карты-----------*/
 var markers = document.querySelectorAll('.marker');
 markers.forEach(function(marker) {
     marker.addEventListener('click', function() {
@@ -14,6 +14,17 @@ document.getElementById('buttonMap').addEventListener('click', function() {
     document.querySelector('.nav').classList.remove('active');
     document.getElementById('location-info').style.display = 'none';
     document.querySelector('.grid-container').style.display = 'grid';
+
+});
+
+document.getElementById('buttonMap').addEventListener('click', function() {
+    if (window.innerWidth <= 800) {
+        // Логика для изменения поведения на экранах меньше 800px
+        document.querySelector('.grid-container').style.display = 'block';
+    } else {
+        // Логика для экранов больше 800px
+        document.querySelector('.grid-container').style.display = 'grid';
+    }
 });
 
 /*------головна--------
