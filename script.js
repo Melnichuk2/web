@@ -245,17 +245,10 @@ locationButtons.forEach(function(button) {
 var tourButton = document.querySelector('button[onclick="autoShowLocations()"]');
 tourButton.addEventListener('click', function() {
     stopTour(); 
-    
-    // Скрываем грид-контейнер
     document.querySelector('.grid-container').style.display = 'none';
-
-    // Отображаем навигацию
     document.querySelector('.nav').classList.add('active');
-
-    // Отображаем окно с описанием и фото
     document.getElementById('location-info').style.display = 'block';
     autoShowLocations(); 
-
     document.getElementById('nav-menu').classList.add('active');
 });
 
@@ -288,7 +281,7 @@ socialButtons.forEach(function(socialButton) {
     });
 });
 
-/*------*/
+/*---остановка на головной---*/
 function hideNavigation() {
     let nav = document.querySelector('.nav');
     if (nav) {
@@ -296,8 +289,74 @@ function hideNavigation() {
     }
 }
 document.getElementById('buttonMap').addEventListener('click', function() {
-    stopTour();  // Логика остановки экскурсии
-    hideNavigation();  // Логика скрытия окна навигации
+    stopTour(); 
+    hideNavigation();  
 });
+
+/*----------гамбургер-----------------*/
+document.getElementById('hamburger').addEventListener('click', function () {
+    const navMenu = document.getElementById('nav-menu');
+    const locationInfo = document.getElementById('location-info');
+    const gridContainer = document.querySelector('.grid-container');
+
+    // Показать/скрыть меню и карту
+    if (!navMenu.classList.contains('active')) {
+        navMenu.classList.add('active');
+        gridContainer.style.display = 'none';
+    } else {
+        navMenu.classList.remove('active');
+        locationInfo.style.display = 'none';
+        gridContainer.style.display = 'block';
+    }
+});
+
+document.querySelectorAll('.marker').forEach(marker => {
+    marker.addEventListener('click', function () {
+        if (window.innerWidth < 1000) {
+            const locationInfo = document.getElementById('location-info');
+            const navMenu = document.getElementById('nav-menu');
+            const gridContainer = document.querySelector('.grid-container');
+            navMenu.classList.remove('active');
+            locationInfo.style.display = 'block';
+            gridContainer.style.display = 'none';
+        }
+    });
+});
+
+document.querySelectorAll('button[onclick="autoShowLocations()"]').forEach(tour => {
+    tour.addEventListener('click', function () {
+        if (window.innerWidth < 1000) {
+            const locationInfo = document.getElementById('location-info');
+            const navMenu = document.getElementById('nav-menu');
+            const gridContainer = document.querySelector('.grid-container');
+
+            navMenu.classList.remove('active');
+            locationInfo.style.display = 'block';
+            gridContainer.style.display = 'none';
+        }
+    });
+});
+
+document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', function () {
+        if (window.innerWidth < 1000) {
+            const navMenu = document.getElementById('nav-menu');
+            const locationInfo = document.getElementById('location-info');
+            const gridContainer = document.querySelector('.grid-container');
+
+            navMenu.classList.remove('active');
+            locationInfo.style.display = 'block';
+            gridContainer.style.display = 'none';
+        }
+    });
+});
+
+/*-----анимация гамбургера----------*/
+
+
+
+
+
+
 
 

@@ -73,7 +73,7 @@ img {
 .link-content a img {
     max-width: 20px; 
     max-height: 22px; 
-   display: block;
+    display: block;
     margin: auto; 
     border-radius: 5px;
 }
@@ -123,6 +123,7 @@ img {
 .nav.active {
     transform: translateX(0);
 }
+
 .dropbtn {
     background-color: #004499;
     color: white;
@@ -153,7 +154,6 @@ img {
     max-height: 300px;
 }
 
-
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -174,9 +174,8 @@ img {
     background-color: #0653b4;
 }
 
-  /*------окно-0---------*/
- 
-  #location-info{
+/*------окно-0---------*/
+#location-info{
     position: absolute;
     opacity: 1; 
     top: 0;
@@ -188,7 +187,7 @@ img {
     transition: right 0.3s ease;
     margin-top: 181px;
     display: none;
-  }
+}
 #location-content {
     display: flex;
 }
@@ -206,11 +205,11 @@ img {
     line-height: 1.5;
 }
 
-  .hidden {
+.hidden {
     display: none;
-  }
+}
 
-  /*---------маркера-------------*/
+/*---------маркера-------------*/
 .marker {
     position: absolute;
     width: 20px; 
@@ -235,8 +234,6 @@ img {
     background-position: center;
     background-repeat: no-repeat;
 }
-
-/*---*/
 .marker::before {
     content: '';
     position: absolute;
@@ -250,8 +247,8 @@ img {
 .marker:hover::before {
     background-color: transparent;
 }
-/*-----*/
 
+/*--вид маркеров при наведении---*/
 .marker:hover .location-name {
     display: block;
 }
@@ -260,7 +257,7 @@ img {
     display: none;
     position: absolute;
     bottom: calc(100% + 5px);
-    width: 100px;
+    width: auto ;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
@@ -274,57 +271,56 @@ img {
     background-image: url('jpg/вхідхду.jpg');
     left: 60%;
     top: 52%; 
-  }
-  
-  .marker.marker2 {
+}
+.marker.marker2 {
     background-image: url('jpg/парк2.jpg'); 
     left: 54%;
     top: 52%;
-  }
-  .marker.marker3{
+}
+.marker.marker3{
     background-image:url('jpg/ліцей.jpg') ;
     left: 75%; 
     top: 70%;
-  }
-  .marker.marker4 {
+}
+.marker.marker4 {
     background-image: url('jpg/басейнвхід.jpg');
     left: 60%;
     top: 77%; 
-  }
-  .marker.marker5 {
+}
+.marker.marker5 {
     background-image: url('jpg/футбол.jpg');
     left: 53%;
     top: 77%; 
-  }
+}
 
-  .marker.marker6 {
+.marker.marker6 {
     background-image: url('jpg/меморіал.jpg');
     left: 56%;
     top: 63%; 
-  }
-  .marker.marker7{
+}
+.marker.marker7{
     background-image: url('jpg/комплекс.jpg');
     left: 53%;
     top: 38%; 
-  }
-  .marker.marker8{
+}
+.marker.marker8{
     background-image: url('jpg/ботаніческий.jpg');
     left: 56%;
     top: 63%; 
-  }
-  .marker.marker9{
+}
+.marker.marker9{
     background-image: url('jpg/буревісник.jpg');
     left: 56%;
     top: 63%; 
-  }
-  .marker.marker10{
+}
+.marker.marker10{
     background-image: url('jpg/водна станція.jpg');
     left: 51%;
     top: 33%; 
-  }
+}
 
-  /*-----footer----*/
-  footer {
+/*-----footer----*/
+footer {
     background-color: #eaeaf1;
     color: #fff;
     padding: 20px;
@@ -341,6 +337,13 @@ img {
     transition: opacity 0.3s ease;
 }
 
+/* Гамбургер меню */
+.hamburger {
+    display: none; 
+    font-size: 30px;
+    cursor: pointer;
+}    
+
 /*-----адаптация------*/
 
 @media screen and (max-width: 1400px) {
@@ -348,31 +351,86 @@ img {
         height: 80%;
         width: 200px;
     }    
-    }
+}       
+@media screen and (max-width: 1200px) {
     
-    @media screen and (max-width: 1200px) {
-        .nav {
-        height: 60%;
-        width: 170px;
-    }
-    .dropbtn {
-        font-size: 12px;
-        border: none;
-        width: 177px; 
-        height: 48px;
-        width: 150px; 
-        height: 60px; 
-    }
-    }
+} 
     @media screen and (max-width: 1000px) {
-    
-    }
-    @media screen and (max-width: 800px) {
-    
-    }
-    @media screen and (max-width: 600px) {
-    
-    }
-    @media screen and (max-width: 400px) {
+    .hamburger {
+        display: block;
+        padding-top: 20px;
+}    
+    .nav {
+        transition: transform 0.1s ease;
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #eaeaf1;
+        padding-top: 40px;
+        margin-top: 251px;
+        }
         
+    .nav.active {
+        transform: translateX(0);
+    }    
+    #location-info {
+        display: none;
+        width: 100%;
+        background-color: #eaeaf1;
+        margin-top: 251px;
+    }  
+    #location-content {
+        display: flex;
     }
+    
+    #location-image {
+        margin-left: 60px;
+        width: 56%; 
+        height: 80%; 
+        margin-top: 15px;
+        display: flex;
+    }
+    #location-description { 
+        margin-left: 33px;
+        font-size: 1.5vw;
+        line-height: 1.5;
+    }
+}        
+@media screen and (max-width: 800px) {
+    #location-content {
+        display: flex;
+}
+    
+    #location-image {
+        margin-left: 60px;
+        width: 56%; 
+        height: 80%; 
+        margin-top: 15px;
+        display: flex;
+    }
+    
+    #location-description { 
+        margin-left: 33px;
+        font-size: 1.5vw;
+        line-height: 1.5;
+    }
+}
+    
+        
+@media screen and (max-width: 600px) {
+    .nav{
+        margin-top: 261px;
+    }
+    #location-info{
+        margin-top: 261px;
+    }    
+}    
+@media screen and (max-width: 500px) {    
+}
+        
+@media screen and (max-width: 398px) {
+            
+}
