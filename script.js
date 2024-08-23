@@ -351,8 +351,63 @@ document.querySelectorAll('.nav a').forEach(link => {
     });
 });
 
-/*-----анимация гамбургера----------*/
+/*-----гамбургер 2-------*/
+document.getElementById('hamburger2').addEventListener('click', function () {
+    const navMenu = document.getElementById('nav-menu');
+    const locationInfo = document.getElementById('location-info');
+    const gridContainer = document.querySelector('.grid-container');
 
+    // Показать/скрыть меню и карту
+    if (!navMenu.classList.contains('active')) {
+        navMenu.classList.add('active');
+        gridContainer.style.display = 'none';
+    } else {
+        navMenu.classList.remove('active');
+        locationInfo.style.display = 'none';
+        gridContainer.style.display = 'block';
+    }
+});
+
+document.querySelectorAll('.marker').forEach(marker => {
+    marker.addEventListener('click', function () {
+        if (window.innerWidth < 1000) {
+            const locationInfo = document.getElementById('location-info');
+            const navMenu = document.getElementById('nav-menu');
+            const gridContainer = document.querySelector('.grid-container');
+            navMenu.classList.remove('active');
+            locationInfo.style.display = 'block';
+            gridContainer.style.display = 'none';
+        }
+    });
+});
+
+document.querySelectorAll('button[onclick="autoShowLocations()"]').forEach(tour => {
+    tour.addEventListener('click', function () {
+        if (window.innerWidth < 1000) {
+            const locationInfo = document.getElementById('location-info');
+            const navMenu = document.getElementById('nav-menu');
+            const gridContainer = document.querySelector('.grid-container');
+
+            navMenu.classList.remove('active');
+            locationInfo.style.display = 'block';
+            gridContainer.style.display = 'none';
+        }
+    });
+});
+
+document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', function () {
+        if (window.innerWidth < 1000) {
+            const navMenu = document.getElementById('nav-menu');
+            const locationInfo = document.getElementById('location-info');
+            const gridContainer = document.querySelector('.grid-container');
+
+            navMenu.classList.remove('active');
+            locationInfo.style.display = 'block';
+            gridContainer.style.display = 'none';
+        }
+    });
+});
 
 
 

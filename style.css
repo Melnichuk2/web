@@ -343,7 +343,11 @@ footer {
     font-size: 30px;
     cursor: pointer;
 }    
-
+.hamburger2 {
+    display: none; 
+    font-size: 30px;
+    cursor: pointer;
+} 
 /*-----адаптация------*/
 
 @media screen and (max-width: 1400px) {
@@ -417,20 +421,53 @@ footer {
         font-size: 1.5vw;
         line-height: 1.5;
     }
+    .grid-container {
+        display: block;
+} 
 }
     
         
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 663px) {  
     .nav{
         margin-top: 261px;
     }
     #location-info{
         margin-top: 261px;
-    }    
+    }   
+     
 }    
-@media screen and (max-width: 500px) {    
-}
-        
-@media screen and (max-width: 398px) {
             
+@media screen and (max-width: 500px) {  
+    .nav{
+        margin-top: 268px;
+    }
+    #location-info{
+        margin-top: 268px;
+    } 
+}   
+@media screen and (max-width: 465px) {
+    button {
+        padding: 10px 10px;
+        margin: 0 8px;
+        cursor: pointer;
+        border-radius: 5px;
+}        
+}
+
+@media screen and (max-width: 398px) {
+    .nav{
+        margin-top: 1px;
+
+    }   
+    .hamburger2 {
+        display: block;
+        padding-top: 20px;
+        margin-bottom: 20px;
+}     
+    .dropbtn {
+        padding: 14px;
+        font-size: 13px;
+        width: 170px; 
+        height: 50px;     
+}
 }
