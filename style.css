@@ -348,6 +348,8 @@ footer {
     font-size: 30px;
     cursor: pointer;
 } 
+
+
 /*-----адаптация------*/
 
 @media screen and (max-width: 1400px) {
@@ -391,14 +393,13 @@ footer {
     }
     
     #location-image {
-        margin-left: 60px;
+        margin-left: 40px;
         width: 56%; 
         height: 80%; 
         margin-top: 15px;
         display: flex;
     }
     #location-description { 
-        margin-left: 33px;
         font-size: 1.5vw;
         line-height: 1.5;
     }
@@ -409,21 +410,26 @@ footer {
 }
     
     #location-image {
-        margin-left: 60px;
-        width: 56%; 
-        height: 80%; 
+        width: 73%; 
+        height: 100%; 
         margin-top: 15px;
         display: flex;
+        margin-left: auto;
+        margin-right: auto;
+
     }
     
     #location-description { 
-        margin-left: 33px;
-        font-size: 1.5vw;
+        margin-left: 20px;
+        font-size: 1.9vw;
         line-height: 1.5;
     }
     .grid-container {
         display: block;
 } 
+    #location-content {
+        display: block;
+}
 }
     
         
@@ -436,7 +442,12 @@ footer {
     }   
     .grid-container {
         display: block;
-} 
+}   
+    #location-description { 
+        margin-left: 20px;
+        font-size: 2.4vw;
+        line-height: 1.5;
+    }
 }    
             
 @media screen and (max-width: 500px) {  
@@ -446,6 +457,13 @@ footer {
     #location-info{
         margin-top: 268px;
     } 
+    #location-image {
+        width: 80%; 
+        height: 100%; 
+        margin-top: 12px;
+
+
+    }
 }   
 @media screen and (max-width: 465px) {
     button {
@@ -453,7 +471,20 @@ footer {
         margin: 0 8px;
         cursor: pointer;
         border-radius: 5px;
-}        
+}    
+    #location-image {
+        width: 82%; 
+        height: 100%; 
+        margin-top: 15px;
+        display: flex;
+        margin-right: 26px;
+
+    }
+    #location-description { 
+        margin-left: 20px;
+        font-size: 2.4vw;
+        line-height: 1.5;
+    }
 }
 
 @media screen and (max-width: 398px) {
@@ -467,9 +498,31 @@ footer {
         margin-bottom: 20px;
 }     
     .dropbtn {
-        padding: 14px;
-        font-size: 13px;
-        width: 170px; 
-        height: 50px;     
+        padding: 10px;
+        font-size: 12px;
+        width: 160px; 
+        height: 40px; 
+        margin-bottom: -20px;
+}    
+    #location-info {
+        display: flex;
+        padding: 20px;
+        margin-top: 340px;
+}
+    #location-image {
+        width: 82%; 
+        height: 100%; 
+        margin-top: 15px;
+        display: flex;
+        margin-right: 10px;
+    }
+    #location-description { 
+        margin-right: -10px;
+        margin-left: 30px;
+        font-size: 2.4vw;
+        line-height: 1.5;
+    }
+    button {
+    margin-bottom: 10px;
 }
 }
